@@ -1,0 +1,49 @@
+.header {
+  grid-column: col-start 1 / col-end 8;
+  background: red;
+  padding: 2rem;
+
+  display: grid;
+  align-content: center;
+  justify-content: start;
+
+  // position: relative;
+
+  &__slide {
+    // top: 50%;
+    // left: 10%;
+    // transform: translateY(-50%);
+    // position: absolute;
+
+    display: grid;
+    grid-row-gap: 1rem;
+  }
+
+  &__heading {
+  }
+
+  &__info {
+    font-size: 1.4rem;
+  }
+
+  &__btn {
+    justify-self: start;
+
+    background: $color-primary-dark;
+    border: none;
+    padding: 1.5rem 2rem;
+    font-size: 1.5rem;
+    color: $color-white;
+    cursor: pointer;
+    transition: all 0.3s;
+
+    &:hover {
+      font-size: 1.8rem;
+      transform: scale(1.05);
+    }
+
+    &:focus {
+      outline: none;
+    }
+  }
+}

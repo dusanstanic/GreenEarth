@@ -1,0 +1,39 @@
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit;
+}
+
+html {
+  font-size: 62.5%;
+
+  @include respond(phone) {
+    font-size: 50%;
+  }
+}
+
+body {
+  box-sizing: border-box;
+}
+
+.container {
+  display: grid;
+  grid-template-rows: min-content 80vh;
+  grid-template-columns:
+    [full-start] minmax(3rem, 1fr) repeat(
+      8,
+      [col-start] minmax(min-content, 20rem) [col-end]
+    )
+    minmax(3rem, 1fr) [full-end];
+
+  @include respond(phone) {
+    grid-template-columns:
+      [full-start] minmax(1rem, 1fr) repeat(
+        8,
+        [col-start] minmax(min-content, 20rem) [col-end]
+      )
+      minmax(1rem, 1fr) [full-end];
+  }
+}

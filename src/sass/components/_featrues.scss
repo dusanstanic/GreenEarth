@@ -1,0 +1,76 @@
+.features {
+  grid-column: col-start 2 / col-end 7;
+  color: $color-primary-dark;
+  margin: 5rem 0;
+
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  // grid-template-columns: repeat(auto-fit, minmax(50rem, 1fr));
+  align-items: start;
+  grid-gap: 6rem;
+
+  @include respond(tab-land) {
+    grid-column: col-start 1 / col-end 8;
+    grid-gap: 4rem;
+  }
+
+  @include respond(tab-port) {
+    grid-gap: 0.5rem;
+    grid-row-gap: 4rem;
+  }
+
+  @include respond(large-phone) {
+    grid-template-columns: auto;
+  }
+
+  &__info {
+    grid-column: 1 / -1;
+    justify-self: center;
+    font-size: 1.5rem;
+    text-transform: uppercase;
+    color: $color-grey-dark-1;
+  }
+
+  &__heading {
+    grid-column: 1 / -1;
+    color: $color-primary-dark;
+
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    // text-align: center;
+
+    @include respond(phone) {
+    }
+  }
+}
+
+.feature {
+  display: grid;
+  grid-template-columns: min-content 1fr;
+  grid-template-rows: max-content;
+
+  grid-row-gap: 1.5rem;
+  grid-column-gap: 2.5rem;
+
+  @include respond(tab-port) {
+    grid-column-gap: 0rem;
+  }
+
+  @include respond(phone) {
+    grid-column-gap: 2.5rem;
+  }
+
+  &__icon {
+    grid-row: 1 / span 2;
+  }
+
+  &__heading {
+    color: $color-primary-dark;
+    font-weight: 700;
+  }
+
+  &__text {
+    font-size: 1.5rem;
+  }
+}

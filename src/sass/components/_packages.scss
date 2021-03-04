@@ -1,0 +1,158 @@
+.packages {
+  grid-column: col-start 1 / col-end 8;
+  padding: 2rem;
+
+  background: $color-primary-dark;
+
+  display: grid;
+  grid-template-columns: repeat(10, 1fr);
+  grid-row-gap: 2rem;
+
+  &__container {
+    grid-column: 4 / -4;
+
+    @include respond(tab-land) {
+      grid-column: 3 / -3;
+    }
+
+    @include respond(tab-port) {
+      grid-column: 2 / -2;
+    }
+
+    display: grid;
+    grid-row-gap: 2rem;
+    justify-items: center;
+  }
+
+  &__quote {
+    color: $color-grey-light-2;
+    text-transform: uppercase;
+    font-size: 1.2rem;
+  }
+
+  &__heading {
+    color: $color-primary-light;
+    text-align: center;
+  }
+
+  &__info {
+    color: $color-white;
+    text-align: center;
+    font-size: 1.2rem;
+  }
+}
+
+.plans {
+  grid-column: 3 / -3;
+  // grid-row-gap: 1.5rem;
+  color: $color-white;
+
+  @include respond(tab-land) {
+    grid-column: 2 / -2;
+  }
+
+  @include respond(tab-port) {
+    grid-column: 1 / -1;
+  }
+
+  display: grid;
+
+  &__quote {
+    margin-bottom: 1rem;
+    justify-self: end;
+
+    font-size: 1.5rem;
+    border-bottom: 1px dashed currentColor;
+    color: $color-primary-light;
+  }
+
+  &__container {
+    display: none;
+    grid-template-columns: repeat(3, 1fr);
+    grid-row-gap: 5rem;
+    // justify-items: center;
+    align-items: start;
+    padding-bottom: 5rem;
+
+    background: $color-white;
+    color: $color-primary-dark;
+
+    &--active {
+      display: grid;
+    }
+
+    @include respond(phone) {
+      //   display: grid;
+      //   grid-template-columns: none;
+
+      display: flex;
+      flex-wrap: wrap;
+      flex-direction: column;
+    }
+  }
+
+  &__options {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+
+    @include respond(phone) {
+      display: none;
+    }
+  }
+
+  &__option {
+    text-align: center;
+    padding: 1rem;
+    border-right: 0.2rem solid $color-grey-dark-1;
+    font-size: 2rem;
+    font-weight: 700;
+    background: $color-grey-light-1;
+
+    &--active {
+      border-right: transparent;
+      background: $color-white;
+      color: $color-primary-dark;
+      border-top: 0.5rem solid $color-primary-light;
+    }
+  }
+
+  &__image {
+    justify-self: center;
+    align-self: center;
+    grid-column: 1 / 2;
+    grid-row: 2 / 3;
+    width: 60%;
+    height: 70%;
+    display: block;
+    border-radius: 50%;
+  }
+}
+
+.plan {
+  grid-column: 2 / -1;
+  grid-row: 2 / 3;
+  align-self: center;
+
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-row-gap: 1.5rem;
+  grid-column-gap: 2.5rem;
+
+  @include respond(phone) {
+    // display: flex;
+    // flex-direction: column;
+    // align-self: flex-start;
+
+    grid-template-columns: none;
+    align-self: start;
+    padding: 4rem;
+  }
+
+  &__item {
+    font-size: 1.5rem;
+
+    @include respond(phone) {
+      font-size: 2.5rem;
+    }
+  }
+}

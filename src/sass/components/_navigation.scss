@@ -1,0 +1,55 @@
+.nav {
+  grid-column: col-start 2 / col-end 7;
+  font-size: 1.5rem;
+  color: $color-primary-light;
+
+  display: flex;
+  align-items: center;
+
+  @include respond(small-phone) {
+    grid-column: col-start 1 / col-end 8;
+    font-size: 1.8rem;
+  }
+
+  &__i {
+    align-self: stretch;
+  }
+
+  &__icon {
+    width: 5.5rem;
+    height: 100%;
+  }
+
+  &__nav {
+    display: flex;
+    flex-wrap: wrap-reverse;
+    justify-content: flex-end;
+    flex: 1;
+  }
+
+  &__items {
+    list-style: none;
+
+    display: flex;
+
+    &--left {
+      font-weight: 700;
+    }
+
+    &--right {
+      margin-left: auto;
+      text-transform: uppercase;
+    }
+  }
+
+  &__item {
+    display: block;
+    margin-right: 1rem;
+  }
+
+  &__link:link,
+  &_link:visited {
+    display: block;
+    cursor: pointer;
+  }
+}
