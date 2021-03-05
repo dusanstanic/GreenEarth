@@ -1,0 +1,161 @@
+.footer {
+  // grid-column: 1 / -1;
+  grid-column: col-start 1 / col-end 8;
+
+  background: $color-primary-dark-1;
+  color: $color-white;
+
+  &__container {
+    display: grid;
+    grid-template-columns: repeat(10, 1fr);
+
+    &--bottom {
+      background: $color-white;
+    }
+  }
+}
+
+.subscription {
+  grid-column: 2 / 7;
+  font-size: 2rem;
+
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+
+  @include respond(tab-land) {
+    grid-column: 3 / 9;
+
+    flex-direction: column;
+    margin-bottom: 2rem;
+    padding: 2rem;
+  }
+
+  @include respond(tab-land) {
+    grid-column: 2 / 10;
+    padding: 1rem;
+  }
+
+  &__item {
+    display: flex;
+    align-items: center;
+
+    margin-right: 2rem;
+
+    @include respond(tab-land) {
+      margin-right: 0;
+      margin-bottom: 1rem;
+
+      flex-direction: column;
+      align-items: stretch;
+    }
+
+    &--contact {
+      border-bottom: 1px solid white;
+      margin-right: 0;
+
+      @include respond(tab-land) {
+        align-self: stretch;
+        border-bottom: none;
+      }
+    }
+  }
+
+  &__input {
+    align-self: stretch;
+
+    background: transparent;
+    color: $color-white;
+    border: none;
+    position: relative;
+
+    @include respond(tab-land) {
+      margin-bottom: 1rem;
+      border-bottom: 1px solid white;
+    }
+
+    &::placeholder {
+      color: $color-grey-light-1;
+      position: absolute;
+      left: 0;
+      top: 0;
+    }
+
+    &:focus {
+      outline: none;
+    }
+  }
+
+  &__btn {
+    cursor: pointer;
+    border: none;
+    font-size: 1.5rem;
+    color: $color-white;
+    background: transparent;
+    width: 50%;
+
+    &:focus {
+      outline: none;
+    }
+
+    @include respond(tab-land) {
+      align-self: center;
+
+      background: $color-white;
+      padding: 1rem;
+      color: $color-primary-dark-1;
+    }
+  }
+}
+
+.media {
+  grid-column: 7 / 11;
+  font-size: 1.5rem;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  // margin-right: 1rem;
+
+  @include respond(tab-land) {
+    grid-column: 1 / -1;
+
+    flex-direction: column;
+
+    padding: 2rem;
+    background: $color-white;
+    color: $color-primary-dark-1;
+  }
+}
+
+.payment {
+  grid-column: 2 / 7;
+
+  background: $color-white;
+  font-size: 1.5rem;
+  color: $color-grey-dark-1;
+
+  display: flex;
+  //justify-content: center;
+  align-items: center;
+
+  @include respond(tab-land) {
+    grid-column: 1 / -1;
+    justify-content: center;
+  }
+}
+
+.help {
+  grid-column: 7 / 10;
+
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+
+  @include respond(tab-land) {
+    grid-column: 1 / -1;
+    justify-content: center;
+  }
+
+  color: $color-grey-dark-1;
+}
