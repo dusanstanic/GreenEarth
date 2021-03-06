@@ -44,11 +44,14 @@
 
 .plans {
   grid-column: 3 / -3;
-  // grid-row-gap: 1.5rem;
   color: $color-white;
 
   @include respond(tab-land) {
     grid-column: 1 / -1;
+  }
+
+  @include respond(phone) {
+    grid-row-gap: 2rem;
   }
 
   display: grid;
@@ -84,6 +87,7 @@
       display: flex;
       flex-wrap: wrap;
       flex-direction: column;
+      padding: 5rem;
     }
   }
 
@@ -122,6 +126,17 @@
     display: block;
     border-radius: 50%;
   }
+
+  &__type {
+    display: none;
+    color: currentColor;
+    font-weight: 700;
+    align-self: center;
+
+    @include respond(phone) {
+      display: block;
+    }
+  }
 }
 
 .plan {
@@ -141,14 +156,30 @@
 
     grid-template-columns: none;
     align-self: start;
-    padding: 4rem;
+    padding: 2rem;
+  }
+
+  &__items {
+    display: grid;
+    grid-row-gap: 1rem;
   }
 
   &__item {
     font-size: 1.5rem;
 
+    display: flex;
+    align-items: center;
+
     @include respond(phone) {
       font-size: 2.5rem;
     }
+
+    &--extra {
+      color: $color-grey-light-1;
+    }
+  }
+
+  &__img {
+    margin-right: 1rem;
   }
 }
