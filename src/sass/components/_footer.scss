@@ -87,9 +87,13 @@
   }
 
   &__btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
     cursor: pointer;
     border: none;
-    font-size: 1.5rem;
+    font-size: 1.8rem;
     color: $color-white;
     background: transparent;
     width: 50%;
@@ -98,11 +102,17 @@
       outline: none;
     }
 
+    .quo {
+      font-size: 2.5rem;
+      margin-left: 0.2rem;
+      margin-top: -0.5rem;
+    }
+
     @include respond(tab-land) {
       align-self: center;
 
       background: $color-white;
-      padding: 1rem;
+      padding: 0.5rem;
       color: $color-primary-dark-1;
     }
   }
@@ -125,6 +135,28 @@
     padding: 2rem;
     background: $color-white;
     color: $color-primary-dark-1;
+  }
+
+  &__items {
+    font-size: 2rem;
+    display: flex;
+    align-items: center;
+
+    @include respond(tab-land) {
+      display: none;
+    }
+
+    &--phone {
+      display: none;
+
+      @include respond(tab-land) {
+        display: flex;
+      }
+    }
+  }
+
+  &__item:not(:last-child) {
+    margin-right: 1rem;
   }
 }
 
