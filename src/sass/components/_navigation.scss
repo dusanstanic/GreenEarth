@@ -1,17 +1,20 @@
 .nav {
   grid-column: col-start 2 / col-end 7;
   font-size: 1.5rem;
-  color: $color-primary-light;
+  color: $color-primary-dark;
 
   display: flex;
   align-items: center;
 
-  @include respond(small-phone) {
+  @include respond(tab-port) {
     grid-column: col-start 1 / col-end 8;
+  }
+
+  @include respond(phone) {
     font-size: 1.8rem;
   }
 
-  &__i {
+  &__brand {
     align-self: stretch;
   }
 
@@ -21,24 +24,27 @@
   }
 
   &__nav {
-    display: flex;
-    flex-wrap: wrap-reverse;
-    justify-content: flex-end;
     flex: 1;
+
+    display: flex;
+
+    @include respond(phone) {
+      font-size: 1.8rem;
+      flex-direction: column-reverse;
+      align-items: flex-end;
+    }
   }
 
   &__items {
     list-style: none;
+    text-transform: uppercase;
 
     display: flex;
 
     &--left {
+      text-transform: initial;
+      flex: 1;
       font-weight: 700;
-    }
-
-    &--right {
-      margin-left: auto;
-      text-transform: uppercase;
     }
   }
 
