@@ -21,10 +21,18 @@ import "./sass/main.scss";
 // ]);
 // fs.writeFile("slides", slidesJSON);
 
+import { renderSlides } from "./js/view/sliderView";
+
 export const createSlider = () => {
-  const sliderWrapper = document.querySelector(".header__wrapper");
-  const slider = document.querySelector(".header__slider");
-  const slides = document.getElementsByClassName("header__slide");
+  const sliderWrapper = document.querySelector(".slider");
+  const slider = document.querySelector(".slider__slider");
+  const slides = document.getElementsByClassName("slider__slide");
+  const sliderNav = document.querySelector(".slider__nav");
+
+  sliderNav.addEventListener("click", (event) => {
+    const direction = event.target.dataset.dir;
+    shiftSlide(direction, "");
+  });
 
   let slidesLength = slides.length;
   let allowShift = true;
@@ -34,11 +42,13 @@ export const createSlider = () => {
   let posX2 = 0;
 
   const handleResize = () => {
-    const slider = document.querySelector(".header__slider");
-    const sliderWrapper1 = document.querySelector(".header__wrapper");
+    const sliderWrapper1 = document.querySelector(".slider");
+    const slider = document.querySelector(".slider__slider");
+    const slides = [document.getElementsByClassName("slider__slide")];
+    index = 0;
+
     const sliderWrapperWidth1 = sliderWrapper1.getClientRects()[0].width;
 
-    var slides = document.getElementsByClassName("header__slide");
     for (let i = 0; i < slides.length; i++) {
       slides[i].style.width = sliderWrapperWidth1 + "px";
     }
@@ -60,9 +70,9 @@ export const createSlider = () => {
   slider.style.left = -sliderWrapperWidth + "px";
   // slider.style.width = sliderWrapperWidth * slides.length + "px";
 
-  for (let i = 0; i < slides.length; i++) {
-    slides[i].style.width = sliderWrapperWidth + "px";
-  }
+  [...slides].forEach((slide) => {
+    slide.style.width = sliderWrapperWidth + "px";
+  });
 
   const dragStart = (event) => {
     event.preventDefault();
@@ -141,5 +151,7 @@ export const createSlider = () => {
   //   shiftSlide("right");
   // }, 5000);
 };
+
+renderSlides();
 
 createSlider();
