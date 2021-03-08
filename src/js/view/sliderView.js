@@ -11,12 +11,12 @@ var slidesJSON = [
   },
   {
     imageUrl: slide2Image,
-    title: "Enjoy out winter deals",
+    title: "Enjoy our new spring deals",
     price: "89.99",
   },
   {
     imageUrl: slide3Image,
-    title: "Enjoy out fall deals",
+    title: "Enjoy our upcoming fall deals",
     price: "49.99",
   },
 ];

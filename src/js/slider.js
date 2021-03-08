@@ -20,19 +20,15 @@ export const createSlider = () => {
     index = 0;
 
     [...slides].forEach((slide) => {
-      slide.style.width = sliderWrapperWidth + "px";
+      slide.style.width = `${sliderWrapperWidth}px`;
     });
 
-    slider.style.left = -sliderWrapperWidth + "px";
+    slider.style.left = `-${sliderWrapperWidth}px`;
   };
 
   window.addEventListener("resize", handleResize);
 
   handleResize();
-
-  // const slider = document.querySelector(".slider__slider");
-  // slider.style.width = sliderWrapperWidth * slides.length + "px";
-  // const slides = document.getElementsByClassName("slider__slide");
 
   const firstSlide = slides[0].cloneNode(true);
   const lastSlide = slides[slides.length - 1].cloneNode(true);
@@ -59,7 +55,7 @@ export const createSlider = () => {
     posX2 = event.clientX - posX1;
     posX1 = event.clientX;
 
-    slider.style.left = slider.offsetLeft + posX2 + "px";
+    slider.style.left = `${slider.offsetLeft + posX2}px`;
   };
 
   const dragEnd = () => {
@@ -89,10 +85,10 @@ export const createSlider = () => {
     }
 
     if (dir === "right") {
-      slider.style.left = posInitial + sliderWrapperWidth + "px";
+      slider.style.left = `${posInitial + sliderWrapperWidth}px`;
       index--;
     } else if (dir === "left") {
-      slider.style.left = posInitial - sliderWrapperWidth + "px";
+      slider.style.left = `${posInitial - sliderWrapperWidth}px`;
       index++;
     }
 
@@ -103,12 +99,12 @@ export const createSlider = () => {
     slider.classList.remove("transition");
 
     if (index === -1) {
-      slider.style.left = -slidesLength * sliderWrapperWidth + "px";
+      slider.style.left = `-${slidesLength * sliderWrapperWidth}px`;
       index = slidesLength - 1;
     }
 
     if (index === slidesLength) {
-      slider.style.left = -sliderWrapperWidth + "px";
+      slider.style.left = `-${sliderWrapperWidth}px`;
       index = 0;
     }
 
@@ -118,9 +114,9 @@ export const createSlider = () => {
   slider.addEventListener("mousedown", dragStart);
   slider.addEventListener("transitionend", checkIndex);
 
-  // setInterval(() => {
-  //   shiftSlide("right");
-  // }, 3000);
+  setInterval(() => {
+    shiftSlide("right");
+  }, 5000);
 };
 
 const init = () => {
