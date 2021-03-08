@@ -22,18 +22,19 @@ body {
   display: grid;
   grid-template-rows: min-content 80vh;
   grid-template-columns:
-    [full-start] minmax(3rem, 1fr) repeat(
-      8,
-      [col-start] minmax(min-content, 20rem) [col-end]
+    [full-start] minmax(1rem, 1fr) repeat(
+      15,
+      [col-start] minmax(min-content, 12rem) [col-end]
     )
-    minmax(3rem, 1fr) [full-end];
+    minmax(1rem, 1fr) [full-end];
 
   @include respond(phone) {
+    grid-template-rows: min-content 30vh;
     grid-template-columns:
-      [full-start] minmax(0rem, 1fr) repeat(
-        8,
-        [col-start] minmax(min-content, 20rem) [col-end]
+      [full-start] minmax(1rem, 1fr) repeat(
+        15,
+        [col-start] minmax(min-content, 12rem) [col-end]
       )
-      minmax(0rem, 1fr) [full-end];
+      minmax(1rem, 1fr) [full-end];
   }
 }

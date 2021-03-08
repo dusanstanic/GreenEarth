@@ -1,39 +1,35 @@
 .footer {
   // grid-column: 1 / -1;
-  grid-column: col-start 1 / col-end 8;
+  grid-column: col-start 1 / col-end 15;
 
   background: $color-primary-dark-1;
   color: $color-white;
 
   &__container {
     display: grid;
-    grid-template-columns: repeat(10, 1fr);
+    grid-template-columns: repeat(15, 1fr);
 
     &--bottom {
       background: $color-white;
+      padding: 2rem 0;
     }
   }
 }
 
 .subscription {
-  grid-column: 2 / 7;
-  font-size: 2rem;
+  grid-column: 2/9;
+
+  padding: 3rem 0;
+  font-size: 1.8rem;
 
   display: flex;
   flex-wrap: wrap;
   align-items: center;
 
   @include respond(tab-land) {
-    grid-column: 3 / 9;
+    grid-column: 3/14;
 
     flex-direction: column;
-    margin-bottom: 2rem;
-    padding: 2rem;
-  }
-
-  @include respond(tab-land) {
-    grid-column: 2 / 10;
-    padding: 1rem;
   }
 
   &__item {
@@ -44,14 +40,18 @@
 
     @include respond(tab-land) {
       margin-right: 0;
-      margin-bottom: 1rem;
+      padding-bottom: 3rem;
 
       flex-direction: column;
       align-items: stretch;
     }
 
     &--contact {
+      flex: 1;
+      justify-content: space-between;
+
       border-bottom: 1px solid white;
+      padding-bottom: 0.5rem;
       margin-right: 0;
 
       @include respond(tab-land) {
@@ -64,21 +64,23 @@
   &__input {
     align-self: stretch;
 
-    background: transparent;
-    color: $color-white;
-    border: none;
     position: relative;
+    background: transparent;
+    border: none;
+    color: $color-white;
 
     @include respond(tab-land) {
-      margin-bottom: 1rem;
+      margin-bottom: 3rem;
+      padding-bottom: 1rem;
       border-bottom: 1px solid white;
     }
 
     &::placeholder {
-      color: $color-grey-light-1;
       position: absolute;
       left: 0;
-      top: 0;
+      top: 100%;
+      font-size: 1.5rem;
+      color: $color-grey-light-1;
     }
 
     &:focus {
@@ -91,12 +93,13 @@
     align-items: center;
     justify-content: center;
 
-    cursor: pointer;
+    background: transparent;
     border: none;
     font-size: 1.8rem;
     color: $color-white;
-    background: transparent;
-    width: 50%;
+    cursor: pointer;
+
+    // width: 50%;
 
     &:focus {
       outline: none;
@@ -111,15 +114,23 @@
     @include respond(tab-land) {
       align-self: center;
 
+      width: 50%;
       background: $color-white;
-      padding: 0.5rem;
+      padding: 1rem 0;
       color: $color-primary-dark-1;
+    }
+
+    @include respond(phone) {
+      align-self: stretch;
+      width: auto;
     }
   }
 }
 
 .media {
-  grid-column: 7 / 11;
+  grid-column: 12 / 16;
+
+  padding: 3rem 0;
   font-size: 1.5rem;
 
   display: flex;
@@ -132,7 +143,6 @@
 
     flex-direction: column;
 
-    padding: 2rem;
     background: $color-white;
     color: $color-primary-dark-1;
   }

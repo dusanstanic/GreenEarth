@@ -1,11 +1,12 @@
 .section {
-  grid-column: col-start 1 / col-end 8;
+  grid-column: col-start 2 / col-end 14;
 
   display: grid;
   margin: 5rem 0;
 
   &__heading {
     color: $color-primary-light;
+    text-align: center;
 
     display: flex;
     flex-wrap: wrap;

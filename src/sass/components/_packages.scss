@@ -1,33 +1,33 @@
 .packages {
-  grid-column: col-start 1 / col-end 8;
-  padding: 2rem;
+  grid-column: col-start 1 / col-end 15;
+  padding: 5rem 2rem;
 
   background: $color-primary-dark;
 
   display: grid;
   grid-template-columns: repeat(10, 1fr);
   grid-row-gap: 2rem;
+}
 
-  &__container {
-    grid-column: 4 / -4;
+.package {
+  grid-column: 4 / -4;
 
-    @include respond(tab-land) {
-      grid-column: 3 / -3;
-    }
-
-    @include respond(tab-port) {
-      grid-column: 2 / -2;
-    }
-
-    display: grid;
-    grid-row-gap: 2rem;
-    justify-items: center;
+  @include respond(tab-land) {
+    grid-column: 3 / -3;
   }
+
+  @include respond(tab-port) {
+    grid-column: 2 / -2;
+  }
+
+  display: grid;
+  grid-row-gap: 1rem;
+  justify-items: center;
 
   &__quote {
     color: $color-grey-light-2;
-    text-transform: uppercase;
     font-size: 1.2rem;
+    text-transform: uppercase;
   }
 
   &__heading {
@@ -36,14 +36,14 @@
   }
 
   &__info {
-    color: $color-white;
     text-align: center;
+    color: $color-white;
     font-size: 1.2rem;
   }
 }
 
 .plans {
-  grid-column: 3 / -3;
+  grid-column: 2 / -2;
   color: $color-white;
 
   @include respond(tab-land) {
@@ -65,7 +65,7 @@
     color: $color-primary-light;
   }
 
-  &__container {
+  &__item {
     display: none;
     grid-template-columns: repeat(3, 1fr);
     grid-row-gap: 5rem;
@@ -87,13 +87,15 @@
       display: flex;
       flex-wrap: wrap;
       flex-direction: column;
-      padding: 5rem;
+      padding: 2rem;
     }
   }
 
   &__options {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
+
+    list-style: none;
 
     @include respond(phone) {
       display: none;
@@ -116,15 +118,26 @@
     }
   }
 
-  &__image {
-    justify-self: center;
-    align-self: center;
+  &__fig {
     grid-column: 1 / 2;
     grid-row: 2 / 3;
-    width: 60%;
-    height: 70%;
-    display: block;
+    justify-self: center;
+    align-self: center;
+
+    width: 25%;
+    padding: 25%;
     border-radius: 50%;
+    overflow: hidden;
+    position: relative;
+  }
+
+  &__image {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    object-fit: cover;
   }
 
   &__type {
@@ -156,7 +169,7 @@
 
     grid-template-columns: none;
     align-self: start;
-    padding: 2rem;
+    padding: 0rem 0rem 2rem 2rem;
   }
 
   &__items {
