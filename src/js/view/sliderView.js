@@ -3,7 +3,7 @@ import slide1Image from "../../image/slide1.jpg";
 import slide2Image from "../../image/slide2.jpg";
 import slide3Image from "../../image/slide3.jpg";
 
-var slidesJSON = [
+const slidesJSON = [
   {
     imageUrl: slide1Image,
     title: "Enjoy out hot summer deals",
