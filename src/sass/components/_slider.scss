@@ -85,8 +85,15 @@
   }
 
   &__info {
+    display: flex;
+    align-items: center;
+
     font-size: 1.5rem;
     color: $color-white;
+  }
+
+  &__price-decimal {
+    font-size: 0.9rem;
   }
 
   &__btn {

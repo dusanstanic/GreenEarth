@@ -24,22 +24,19 @@ const slidesJSON = [
 export const renderSlide = (slide) => {
   const markup = `
     <div class="slider__slide">
-        <img class="slider__img" src="${slide.imageUrl}" />
-        <div class="slider__more">
-            <h1 class="slider__heading heading-1">
-            ${slide.title}
-            </h1>
-            <div
-                class="slider__info"
-                style="display: flex; align-items: center"
-            >
-                from &pound;  ${slide.price}
-                <div style="display: inline-block">
-                    <div style="font-size: 0.9rem">.50</div>
-                </div>
-            </div>
-            <button class="slider__btn">Book now !</button>
+      <img class="slider__img" src="${slide.imageUrl}" />
+      <div class="slider__more">
+        <h1 class="slider__heading heading-1">
+        ${slide.title}
+        </h1>
+        <div class="slider__info">
+          from &pound; ${slide.price}
+          <div class="slider__price">
+            <div class="slider__price-decimal">.50</div>
+          </div>
         </div>
+        <button class="slider__btn">Book now !</button>
+      </div>
     </div>`;
 
   elements.slider.insertAdjacentHTML("beforeend", markup);
