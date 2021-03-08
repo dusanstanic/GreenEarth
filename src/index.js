@@ -1,3 +1,5 @@
-require("./sass/main.scss");
+import "./sass/main.scss";
 
-console.log("First");
+import initSlider from "./js/slider";
+
+initSlider();
